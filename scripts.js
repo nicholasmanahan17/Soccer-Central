@@ -10,9 +10,9 @@ function toggleTheme() {
     const themeBtn = document.getElementById('theme-toggle-btn');
     if (themeBtn) {
         if (bodyElement.classList.contains('day-mode')) {
-            themeBtn.textContent = '🌙 Switch to Night Match Mode';
+            themeBtn.textContent = 'Switch to Night Match Mode';
         } else {
-            themeBtn.textContent = '☀️ Switch to Day Match Mode';
+            themeBtn.textContent = 'Switch to Day Match Mode';
         }
     }
 }
@@ -40,5 +40,5 @@ function scoreGoal() {
 
 // Optional Feature: Quick Match Alert
 function triggerMatchAlert() {
-    alert("📢 TICKET ALERT: Next home fixture against FC City is 80% sold out!");
+    alert("TICKET ALERT: Next home fixture against FC City is 80% sold out!");
 }
