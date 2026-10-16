@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not_Void's Soccer Central | Home</title>
+    <!-- Linked External CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Linked External JavaScript File -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Required Navigation Menu Bar -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="roster.html" class="nav-link">Squad Roster</a></li>
+            <li><a href="matches.html" class="nav-link">Fixtures</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Not_Void's Soccer Central</h1>
+        
+        <div class="card">
+            <p>Welcome to Soccer Central! This site combines web design with a passion for the beautiful game. Here you will find our team roster, stadium updates, match highlights, and interactive fan features.</p>
+        </div>
+
+        <!-- Featured Image -->
+        <img src="soccer-ball.jpg" alt="Soccer ball resting on stadium grass under floodlights" class="featured-image">
+
+        <!-- Interactive JS Feature 1: Theme Switcher -->
+        <div class="interactive-section">
+            <h2>Stadium Lighting Controls</h2>
+            <p>Click below to toggle between Night Floodlights and Day Pitch mode:</p>
+            <button id="theme-toggle-btn" class="btn" onclick="toggleTheme()">☀️ Switch to Day Match Mode</button>
+        </div>
+
+        <!-- Unordered List Requirement -->
+        <h2>Club Core Values</h2>
+        <ul class="card">
+            <li>Tactical Discipline & Precision Passing</li>
+            <li>High-Pressing Defensive Intensity</li>
+            <li>Relentless Teamwork & Sportsmanship</li>
+        </ul>
+
+        <!-- Interactive JS Feature 2: Goal Counter & Pop-Up -->
+        <div class="interactive-section">
+            <h2>Penalty Kick Challenge</h2>
+            <p>Test your shot! Goals Scored: <strong id="goal-counter" style="font-size: 24px;">0</strong></p>
+            <button class="btn" onclick="scoreGoal()">⚽ Take Penalty Kick!</button>
+        </div>
+
+        <!-- External Web Links -->
+        <h2>Official Football Portals</h2>
+        <div class="interactive-section">
+            <a href="https://www.premierleague.com" target="_blank" rel="noopener noreferrer" class="btn">Premier League</a>
+            <a href="https://www.uefa.com" target="_blank" rel="noopener noreferrer" class="btn">UEFA Champions League</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Not_Void's Soccer Central | Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+</body>
+</html>
