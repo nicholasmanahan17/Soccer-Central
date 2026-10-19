@@ -1,44 +1,227 @@
 /* =========================================================
-   Not_Void's Soccer Central - Shared Script (script.js)
+   Nick 's Soccer Central - Tabbed Pitch Theme (style.css)
    ========================================================= */
 
-// Feature 1: Theme Switcher (Night Pitch vs. Day Match)
-function toggleTheme() {
-    const bodyElement = document.body;
-    bodyElement.classList.toggle('day-mode');
-    
-    const themeBtn = document.getElementById('theme-toggle-btn');
-    if (themeBtn) {
-        if (bodyElement.classList.contains('day-mode')) {
-            themeBtn.textContent = 'Switch to Night Match Mode';
-        } else {
-            themeBtn.textContent = 'Switch to Day Match Mode';
-        }
-    }
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-// Feature 2: Interactive Goal Score Counter with Pop-Up Alert
-let scoreCount = 0;
-
-function scoreGoal() {
-    scoreCount++;
-    const scoreDisplay = document.getElementById('goal-counter');
-    
-    if (scoreDisplay) {
-        scoreDisplay.textContent = scoreCount;
-    }
-
-    // Interactive Alert pop-up triggered on milestone scores
-    if (scoreCount === 1) {
-        alert("GOOOOOAL! You scored your first penalty kick!");
-    } else if (scoreCount === 5) {
-        alert("HAT-TRICK HERO! 5 Goals Scored on the Board!");
-    } else if (scoreCount === 10) {
-        alert("GOLDEN BOOT UNLOCKED! You scored 10 goals!");
-    }
+/* Global Page Base with Soccer Pitch Striped Grass Background */
+body {
+    font-family: 'Share Tech Mono', 'Courier New', monospace;
+    background-color: #071208;
+    /* CSS Pitch lines and alternating lawn turf stripes */
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(57, 255, 20, 0.08) 0%, transparent 60%),
+        repeating-linear-gradient(
+            0deg,
+            #071208 0px,
+            #071208 50px,
+            #0e2110 50px,
+            #0e2110 100px
+        );
+    background-attachment: fixed;
+    color: #39FF14;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-// Optional Feature: Quick Match Alert
-function triggerMatchAlert() {
-    alert("TICKET ALERT: Next home fixture against FC City is 80% sold out!");
+/* Day Match Theme Mode */
+body.day-mode {
+    background-color: #1b4320;
+    background-image: repeating-linear-gradient(
+        0deg,
+        #1b4320 0px,
+        #1b4320 50px,
+        #24572a 50px,
+        #24572a 100px
+    );
+    color: #ffffff;
+}
+
+body.day-mode .card,
+body.day-mode .interactive-section {
+    background-color: rgba(10, 35, 12, 0.95);
+    color: #ffffff;
+    border-color: #39FF14;
+}
+
+body.day-mode .nav-link {
+    background-color: #123316;
+    color: #39FF14;
+    border-color: #1f5225;
+}
+
+body.day-mode .nav-link.active {
+    background-color: #39FF14;
+    color: #071208;
+}
+
+/* Headings with Stadium Light Effects */
+h1 {
+    font-size: 34px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    color: #39FF14;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #39FF14;
+    margin: 35px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #39FF14;
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+}
+
+/* =========================================================
+   STADIUM TAB NAVIGATION MENU
+   ========================================================= */
+nav {
+    background-color: transparent;
+    border-bottom: 3px solid #39FF14; /* Pitch boundary line under tabs */
+    padding: 10px 10px 0 10px;
+    margin-bottom: 30px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Clickable Folder-Style Tabs */
+.nav-link {
+    display: block;
+    color: #39FF14;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    background-color: #102112;
+    border: 2px solid #1f3f23;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0; /* Tab rounded top corners */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tab Hover State */
+.nav-link:hover {
+    background-color: #1a381e;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Active Tab Highlight */
+.nav-link.active {
+    background-color: #39FF14;
+    color: #071208;
+    border-color: #39FF14;
+    box-shadow: 0 -4px 12px rgba(57, 255, 20, 0.5);
+    transform: translateY(0);
+}
+
+/* Content Box Cards */
+.card {
+    background: linear-gradient(145deg, #101d12, #162919);
+    color: #39FF14;
+    padding: 24px;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #234527;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+}
+
+ul, ol {
+    padding-left: 28px;
+}
+
+li {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Featured Images */
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 10px;
+    border: 2px solid #39FF14;
+    box-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+}
+
+/* Interactive Box Cards */
+.interactive-section {
+    text-align: center;
+    background: linear-gradient(145deg, #0e1b10, #142617);
+    border: 2px dashed #39FF14;
+    border-radius: 10px;
+    padding: 22px;
+    margin: 25px 0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.interactive-section p {
+    margin-bottom: 15px;
+}
+
+/* Action Buttons */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #39FF14 0%, #2bbd11 100%);
+    color: #071208;
+    text-decoration: none;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #4fff2b 0%, #39FF14 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    font-size: 13px;
+    color: #2e6132;
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid #1a381d;
 }
